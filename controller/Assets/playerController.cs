@@ -47,10 +47,11 @@ public class playerController : MonoBehaviour {
       float fly = (Input.GetAxis("Vertical") + 1) * airspeed * Time.deltaTime;
       transform.Translate(cam.transform.forward * fly);
 
-      // tilt
+      /* tilt
       float angle = Input.GetAxis("Horizontal") * -40;
       Quaternion tiltAngle = Quaternion.Euler(0, transform.localEulerAngles.y, angle);
       transform.rotation = Quaternion.Lerp(transform.rotation, tiltAngle, Time.time * rotationspeedX);
+			*/
 		}
 
     else {
