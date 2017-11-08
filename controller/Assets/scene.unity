@@ -1212,7 +1212,6 @@ GameObject:
   m_Component:
   - component: {fileID: 875211964}
   - component: {fileID: 875211963}
-  - component: {fileID: 875211962}
   - component: {fileID: 875211961}
   - component: {fileID: 875211960}
   m_Layer: 0
@@ -1230,13 +1229,6 @@ AudioListener:
   m_GameObject: {fileID: 875211959}
   m_Enabled: 1
 --- !u!124 &875211961
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 875211959}
-  m_Enabled: 1
---- !u!92 &875211962
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1284,11 +1276,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875211959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000059604645, y: 0.5499993, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1531613543}
+  m_Father: {fileID: 1440503841}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &965100377
@@ -1823,6 +1815,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1389654314}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1440503840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1440503841}
+  - component: {fileID: 1440503842}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1440503841
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1440503840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 103.93, y: 2, z: 11.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 875211964}
+  - {fileID: 1531613543}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440503842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1440503840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a00b0e5cd01944eadbc69feefff464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundspeed: 5
+  launchspeed: 50
+  airspeed: 10
+  gravity: 20
+  drag: 10
+  buttFlap: 
+  buttLook: 
+  buttDive: 
+  buttLaunch: 
+  isFlying: 0
+  rb: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!1 &1445239041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1967,7 @@ GameObject:
   - component: {fileID: 1531613540}
   - component: {fileID: 1531613539}
   - component: {fileID: 1531613544}
+  - component: {fileID: 1531613545}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1987,9 +2034,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 0.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!33 &1531613542
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2003,13 +2050,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531613538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100, y: 10, z: 5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 875211964}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Children: []
+  m_Father: {fileID: 1440503841}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1531613544
 MonoBehaviour:
@@ -2022,14 +2068,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b97ff7dd715ce4885ada5dbb0b41ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
   groundspeed: 5
-  flyspeed: 10
-  rotationspeed: 100
   launchspeed: 100
+  airspeed: 10
+  rotationspeedX: 0.01
+  rotationspeedY: 40
+  rotationspeedZ: 0.005
   gravity: 10
   drag: 10
-  rotationY: {x: 0, y: 0, z: 0}
+  buttFlap: 
+  buttLook: 
+  buttDive: 
+  buttLaunch: 
+  rb: {fileID: 0}
+  cam: {fileID: 0}
+  isFlying: 0
+--- !u!114 &1531613545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531613538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9f4766039669c43936d4588c973ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationspeedX: 0.01
+  rotationspeedY: 40
+  rotationspeedZ: 0.005
 --- !u!1 &1563840073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,7 +2304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1751718971
 GameObject:
