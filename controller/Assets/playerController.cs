@@ -47,10 +47,13 @@ public class playerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (isFlying) {
+			// rotate
+			Quaternion groundRot = Quaternion.Euler(0, transform.localEulerAngles.y + cam.transform.localEulerAngles.y, 0);
+      transform.rotation = Quaternion.Slerp(transform.rotation, groundRot, Time.deltaTime);
 
       // alter speed
       float fly = (Input.GetAxis("Vertical") + 1) * airspeed * Time.deltaTime;
-	    transform.Translate(child.transform.forward * fly);
+	    transform.Translate(transform.forward * fly);
 
 
       // tilt
@@ -62,14 +65,16 @@ public class playerController : MonoBehaviour {
 		}
 
     else {
-			// rotate on ground
-			Quaternion groundRot = Quaternion.Euler(0, transform.localEulerAngles.y + cam.transform.localEulerAngles.y, 0);
-      transform.rotation = Quaternion.Slerp(transform.rotation, groundRot, Time.deltaTime);
+			// rotate
+			float groundRotateY = transform.localEulerAngles.y + cam.transform.localEulerAngles.y;
+			Quaternion groundRot = Quaternion.Euler(0, groundRotateY, 0);
+      transform.rotation = Quaternion.Slerp(transform.rotation, groundRot, Time.deltaTime * 0.5F);
+			//transform.rotation = groundRot;
 
       // move
       if (Input.GetAxis("Vertical") != 0) {
         float walk = (Input.GetAxis("Vertical") * groundspeed * Time.deltaTime);
-				transform.Translate(cam.transform.forward * walk);
+				transform.Translate(transform.forward * walk);
       }
     }
 	}
