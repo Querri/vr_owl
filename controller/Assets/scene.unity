@@ -1825,6 +1825,7 @@ GameObject:
   - component: {fileID: 1440503841}
   - component: {fileID: 1440503842}
   - component: {fileID: 1440503843}
+  - component: {fileID: 1440503844}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1853,7 +1854,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1440503840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79a00b0e5cd01944eadbc69feefff464, type: 3}
   m_Name: 
@@ -1888,6 +1889,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1440503844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1440503840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e707ff2028d79084a9ce67d3a6a8e211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundspeed: 5
+  launchspeed: 50
+  airspeed: 10
+  rotationspeedX: 0.005
+  rotationspeedY: 40
+  rotationspeedZ: 0.01
+  gravity: 20
+  drag: 10
+  buttonFlap: 
+  buttonDive: 
+  buttonLaunch: 
+  child: {fileID: 0}
 --- !u!1 &1445239041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,7 +2089,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531613538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed9f4766039669c43936d4588c973ab0, type: 3}
   m_Name: 

@@ -39,10 +39,9 @@ public class capsuleController : MonoBehaviour {
 
     else {
       // rotate on ground
-      /*Vector3 camForward = parent.cam.transform.forward;
+      Vector3 camForward = parent.cam.transform.forward;
       Quaternion camRotation = Quaternion.LookRotation(camForward);
       transform.rotation = Quaternion.Slerp(transform.rotation, camRotation, Time.deltaTime * 3F);
-      */
     }
   }
 }
