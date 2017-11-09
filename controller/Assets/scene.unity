@@ -1858,6 +1858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a00b0e5cd01944eadbc69feefff464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationspeedX: 0.01
+  rotationspeedY: 40
+  rotationspeedZ: 0.005
   groundspeed: 5
   launchspeed: 50
   airspeed: 10
@@ -1981,7 +1984,6 @@ GameObject:
   - component: {fileID: 1531613542}
   - component: {fileID: 1531613541}
   - component: {fileID: 1531613540}
-  - component: {fileID: 1531613544}
   - component: {fileID: 1531613545}
   m_Layer: 0
   m_Name: Capsule
@@ -2057,17 +2059,6 @@ Transform:
   m_Father: {fileID: 1440503841}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1531613544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1531613538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b97ff7dd715ce4885ada5dbb0b41ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1531613545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,9 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9f4766039669c43936d4588c973ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationspeedX: 0.01
-  rotationspeedY: 40
-  rotationspeedZ: 0.005
+  imTrue: 0
 --- !u!1 &1563840073
 GameObject:
   m_ObjectHideFlags: 0
