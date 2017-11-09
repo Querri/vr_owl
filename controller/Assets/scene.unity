@@ -1905,7 +1905,7 @@ MonoBehaviour:
   airspeed: 10
   rotationspeedX: 0.005
   rotationspeedY: 40
-  rotationspeedZ: 0.01
+  rotationspeedZ: 0.005
   gravity: 20
   drag: 10
   buttonFlap: 
