@@ -9,7 +9,7 @@ public class joystickController : MonoBehaviour {
 	  public float airspeed = 10.0F;
 	  public float rotationspeedX = 0.005F;
 	  public float rotationspeedY = 40;
-	  public float rotationspeedZ = 0.005F;
+	  public float rotationspeedZ = 0.001F;
 	  public float gravity = 20.0F;
 	  public float drag = 10.0F;
 
@@ -53,18 +53,19 @@ public class joystickController : MonoBehaviour {
     if (isFlying) {
       // dive
       if (Input.GetButton(buttDive)) {
-        if (transform.localEulerAngles.x != 40) {
-          Quaternion diveAngle = Quaternion.Euler(40, transform.localEulerAngles.y, 0);
+        if (transform.localEulerAngles.x != 70) {
+          Quaternion diveAngle = Quaternion.Euler(470, transform.localEulerAngles.y, 0);
           transform.rotation = Quaternion.Lerp(transform.rotation, diveAngle, Time.time * rotationspeedZ);
         }
-      }
+      } else {
+	      float yVel = rb.velocity.y + Physics.gravity.y;
+	      rb.AddForce(Vector3.up * -yVel, ForceMode.Acceleration + 1);
+			}
 
 			if (Input.GetButton(buttFlap)) {
 				rb.AddForce(Vector3.up * 50, ForceMode.Acceleration + 1);
 			}
 
-      float yVel = rb.velocity.y + Physics.gravity.y;
-      rb.AddForce(Vector3.up * -yVel, ForceMode.Acceleration + 1);
 
 
       // alter speed
