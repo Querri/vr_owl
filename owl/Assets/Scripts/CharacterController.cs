@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour {
 
-	  public float groundspeed = 5.0F;
-	  public float launchspeed = 50.0F;
-	  public float airspeed = 10.0F;
-	  public float rotationspeedX = 0.0025F;
-	  public float rotationspeedY = 40;
-	  public float rotationspeedZ = 0.001F;
-	  public float gravity = 20.0F;
-	  public float drag = 10.0F;
+	  public float groundspeed;
+	  public float launchspeed;
+	  public float airspeed;
+	  public float rotationspeedX;
+	  public float rotationspeedY;
+	  public float rotationspeedZ;
+	  public float gravity;
 
 	  public string buttFlap;
 	  public string buttDive;
@@ -49,22 +48,17 @@ public class CharacterController : MonoBehaviour {
 	void FixedUpdate() {
 
     if (isFlying) {
-      // dive
-      if (Input.GetButton(buttDive)) {
-        /*if (transform.localEulerAngles.x != 70) {
-          Quaternion diveAngle = Quaternion.Euler(470, transform.localEulerAngles.y, 0);
-          transform.rotation = Quaternion.Lerp(transform.rotation, diveAngle, Time.time * rotationspeedZ);
-        }*/
-      } else {
+
+      // not dive
+      if (!Input.GetButton(buttDive)) {
 	      float yVel = rb.velocity.y + Physics.gravity.y;
 	      rb.AddForce(Vector3.up * -yVel, ForceMode.Acceleration + 1);
 			}
 
+			// gain altitude
 			if (Input.GetButton(buttFlap)) {
 				rb.AddForce(Vector3.up * 50, ForceMode.Acceleration + 1);
 			}
-
-
 
       // alter speed
       float translation = (Input.GetAxis("Vertical") + 1) * airspeed * Time.deltaTime;
@@ -77,7 +71,7 @@ public class CharacterController : MonoBehaviour {
 
       // turn
       if (Input.GetAxis("Horizontal") != 0) {
-        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * 45 * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * rotationspeedY * Time.deltaTime, Space.World);
       }
     }
 
@@ -104,7 +98,7 @@ public class CharacterController : MonoBehaviour {
 
       // turn
       if (Input.GetAxis("Horizontal") != 0) {
-        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * 45 * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * rotationspeedY * Time.deltaTime, Space.World);
       }
     }
   }

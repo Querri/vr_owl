@@ -12,9 +12,7 @@ public class MenuScript : MonoBehaviour {
 	void Start () {
 		buttPause = "PS4_Options";
 		pauseMenu.SetActive(false);
-		if (!Application.isEditor) {
-			Pause();
-		}
+		Pause();
 	}
 
 	void Pause() {
@@ -29,7 +27,7 @@ public class MenuScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-			if (Input.GetButton(buttPause)) {
+			if (Input.GetButtonDown(buttPause)) {
 				Pause();
 			}
 	}
