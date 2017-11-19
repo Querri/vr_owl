@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.78317577, g: 0.68368334, b: 0.5434735, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -20953,9 +20953,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundspeed: 5
   launchspeed: 30
-  airspeed: 9
+  airspeed: 10
   rotationspeedX: 0.0025
-  rotationspeedY: 15
+  rotationspeedYGround: 40
+  rotationspeedYAir: 18
   rotationspeedZ: 0.001
   gravity: 20
   buttFlap: 

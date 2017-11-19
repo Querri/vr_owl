@@ -6,9 +6,9 @@ public class CameraController : MonoBehaviour {
 	public GameObject player;
 
 	void Start () {
-  }
+    }
 
 	void LateUpdate () {
-		transform.position = player.transform.position;
+	    transform.position = player.transform.position;
 	}
 }
