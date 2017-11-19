@@ -26,6 +26,7 @@ public class CharacterController : MonoBehaviour {
 	    Cursor.lockState = CursorLockMode.Locked;
 	    rb = GetComponent<Rigidbody>();
 
+        // android mapping for PS4 controller is messed up
 	    if (Application.isEditor) {
 	        buttFlap = "PS4_X";
 	        buttDive = "PS4_Circle";
@@ -56,10 +57,10 @@ public class CharacterController : MonoBehaviour {
 	            rb.AddForce(Vector3.up * -yVel, ForceMode.Acceleration + 1);
 		    }
 
-		        // gain altitude
-		        if (Input.GetButton(buttFlap)) {
-			        rb.AddForce(Vector3.up * 50, ForceMode.Acceleration + 1);
-		        }
+		    // gain altitude
+		    if (Input.GetButton(buttFlap)) {
+			    rb.AddForce(Vector3.up * 50, ForceMode.Acceleration + 1);
+		    }
 
             // alter speed
             float translation = (Input.GetAxis("Vertical") + 1) * airspeed * Time.deltaTime;
